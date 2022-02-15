@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graph Based Summary</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+    <style>
+        #graphSum{
+            width: 40%;
+            margin: auto;
+            text-align: center;
+        }
+        select{
+            width: 40%;
+            height: 30px;
+            font-size: 15px;
+        }
+        #homeBtn{
+            margin-top: 20px;
+            border: 1px solid green;
+            color: green;
+            background-color: white;
+            width: 300px;
+            height: 30px;
+            border-radius:5px ;
+        }
+        #myChart{
+            display: none;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="graphSum">
+        <form action="">
+            <select name="Select Month" id="month">
+                <option value="-1" disabled selected>Select Month</option>
+                <option value="1">January</option>
+                <option value="2">Febuary</option>
+                <option value="3">March</option>
+                <option value="4">April</option>
+                <option value="5">May</option>
+                <option value="6">June</option>
+                <option value="7">July</option>
+                <option value="8">August</option>
+                <option value="9">September</option>
+                <option value="10">October</option>
+                <option value="11">November</option>
+                <option value="12">December</option>
+            </select>
+            <select name="Select year" id="year">
+                <option value="2018">2018</option>
+                <option disabled selected value="-1">Select year</option>
+                <option value="2019">2019</option>
+                <option value="2020">2020</option>
+                <option value="2021">2021</option>
+                <option value="2022">2022</option>
+            </select>
+        </form>
+        <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+        <button id="homeBtn" onclick="window.location.href='home.html';">Go Back To Home</button>
+        <script>
+            //W3 SCHOOL CHART.JS
+            document.getElementById("year").addEventListener("change",function(){
+                loadGraph();
+            }),false;
+            document.getElementById("month").addEventListener("change",function(){
+                loadGraph();
+            }),false;
+            function loadGraph()
+            {
+                document.getElementById("myChart").style.display="block";
+                var y=document.getElementById("year").value;
+                var m=document.getElementById("month").value;
+                if(y!=-1 && m!=-1)
+                {
+                    var xValues = ["Education", "Entertainment", "Food", "Grocery","others"];
+                    var yValues = [0,0,0,0,0];
+                    var localStorageData = new Array();
+                    for(var i=0;i<localStorage.length;i++)
+                    {
+                        localStorageData[i]=localStorage.getItem(localStorage.key(i));
+                        let arr =JSON.parse(localStorageData[i]);
+                        const timeArr=arr[4].split(" ");
+                        const dateArr=timeArr[0].split("/")
+                        if(dateArr[1]==m && dateArr[2]==y)
+                            if(arr[3]=="Education")
+                                yValues[0]+=parseInt(arr[2]);
+                            else if(arr[3]=="Entertainment")
+                                yValues[1]+=parseInt(arr[2]);
+                            else if(arr[3]=="Entertainment")
+                                yValues[2]+=parseInt(arr[2]);
+                            else if(arr[3]=="Entertainment")
+                                yValues[3]+=parseInt(arr[2]);
+                            else
+                                yValues[4]+=parseInt(arr[2]);
+                    }
+            
+                    var barColors = ["red", "green","blue","orange","black"];
+                    new Chart("myChart", {
+                        type: "bar",
+                        data: {
+                            labels: xValues,
+                            datasets: [{
+                                backgroundColor: barColors,
+                                data: yValues
+                            }]
+                        },
+                        options: {
+                            legend: {display: false},
+                            title: {
+                                display: true,
+                                text: "Expense Summary"
+                            }
+                        }
+                    });
+                }
+            }
+        </script>
+    </div>
+    
+</body>
+</html>

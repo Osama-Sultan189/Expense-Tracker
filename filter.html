@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filter</title>
+    <link rel="stylesheet" href="CSS/filter.css">
+    <script src="JS/filter.js" defer></script>
+</head>
+<body>
+    <div id="form">
+        <h1>Filter Expenses</h1>
+        <form action="">
+            <div>
+                <label for="type">Type</label>
+            </div>
+            <input type="text" name="type" id="inTyp">
+            <div id="rangF">
+                <label for="RangeFrom">Range From:</label>
+                <input type="number" name="RangeFrom" id="RF">
+            </div>
+            <div id="rangT">
+                <label for="RangeTo">Range To:</label>
+                <input type="number" name="RangeTo" id="RT">
+            </div>
+        </form>
+        <div style="text-align: center;">
+            <button id="filterExpenses">Show Filtered Expenses</button>
+            <table id="expnsetab">
+                <thead id="tableHead">
+                    <th>Sr.</th>
+                    <th>Expense Summary.</th>
+                    <th>Description.</th>
+                    <th>Price</th>
+                    <th>Type</th>
+                    <th>Date</th>
+                    <th>Options</th>
+                </thead>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

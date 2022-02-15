@@ -1,0 +1,39 @@
+#form{
+    width: 50%;
+    margin: auto;
+}
+h1{
+    text-align: center;
+}
+input{
+    width: 100%;
+    margin-right: 50px;
+}
+#rangF,#rangT{
+    padding-top: 10px;
+    width: 47%;
+    float: left;
+}
+#rangT{
+    margin-left: 57px;
+}
+#filterExpenses{
+    margin-top:20px ;
+    width: 300px;
+    height: 30px;
+    border-radius:5px ;
+    color: white;
+    background-color: green;
+}
+th, td{
+    border: 2px solid grey;
+    border-collapse: collapse;
+    font-size: 20px;
+}
+#expnsetab{
+    display: none;
+    margin: auto;
+    margin-top: 30px;
+    border-collapse: collapse;
+    font-size: 20px;
+}

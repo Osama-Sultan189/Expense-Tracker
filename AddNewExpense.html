@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/expenseAdd.css">
+    <title>Add New Expense</title>
+    <script src="JS/task2.js" defer></script>
+</head>
+<body>
+    <h1> Add New Expense</h1>
+    <form action="">
+        <table>
+            <tr>
+                <td class="col1"><label for="summary">Expense Summary:</label></td>
+                <td class="col2"><input required type="text" id="summary" placeholder="Expense Summary Here"></td>
+            </tr>
+            <tr>
+                <td class="col1"><label for="des">Expense Description</label></td>
+                <td class="col2"><input required type="text" id="des" placeholder="Expense Description Here"></td>
+            </tr>
+            <tr>
+                <td class="col1"><label for="price">Amount</label></td>
+                <td class="col2"><input required type="number" id="price" placeholder="Expense Amount Here"></td>
+            </tr>
+            <tr>
+                <td class="col1"><label for="type">Type</label></td>
+                <td class="col2"><input required type="text" id="type" placeholder="Expense Type Here"></td>
+            </tr>
+            <tr>
+                <td class="col1"><label for="date">Date</label></td>
+                <td class="col2"><input required type="datetime" id="date" disabled></td>
+            </tr>
+        </table>
+        <input type="submit" value="ADD" id="sub">
+    </form>
+    <button id="homeBtn" onclick="window.location.href='home.html';">Go Back To Home</button>
+</body>
+</html>

@@ -1,0 +1,45 @@
+body{
+    text-align: center;
+    align-content: center;
+}
+#heading{
+    color: green;
+}
+#buttons{
+    text-align: center;
+}
+.btns{
+    margin-top: 20px;
+    width: 300px;
+    height: 30px;
+}
+#newEx{
+    background-color: black;
+    color: white;
+}
+#flrRes{
+    background-color: white;
+    color: black;
+}
+#expnsetab{
+    width: 60%;
+    margin: auto;
+    border: 2px solid grey;
+    border-collapse: collapse;
+    font-size: 20px;
+}
+#tableHead{
+    background-color: black;
+    color: white;
+}
+th, td{
+    border: 2px solid grey;
+    border-collapse: collapse;
+    font-size: 20px;
+}
+#updateTable,#updateTable>th{
+    border: none;
+}
+.upd{
+    width: 100px;
+}
